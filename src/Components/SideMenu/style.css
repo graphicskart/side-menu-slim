@@ -1,0 +1,103 @@
+html, body, #root{
+	height: 100%;
+}
+.App{
+	overflow: auto;
+	height: 100%;
+}
+.sideMenuCon{
+	width: 70px;
+	float: left;
+	background: #596db9;
+	height: 100%;
+}
+.contentCon{
+	width: calc(100% - 70px);
+	float: left;
+	height: 100%;
+	overflow: auto;
+	background: #edf2f6;
+}
+
+.sideMenu{
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
+.sideMenu ul{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.sideMenu ul li{
+	display: flex;
+	flex: 1;
+}
+.sideMenu ul li a{
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	position: relative;
+	font-size: 18px;
+	text-decoration: none;
+}
+.sideMenu ul li a:after{
+	position: absolute;
+    left: -5px;
+    height: calc(100% - 10px);
+    top: 5px;
+    width: 5px;
+    background: #fff;
+    transition: all ease-out .3s 0s;
+    content: '';
+}
+.sideMenu ul li:hover a:after{
+	left: 0;
+}
+.sideMenu ul li a span{
+	position: absolute;
+    padding: 10px;
+    font-size: 14px;
+    left: 0px;
+    background: #2f323a;
+    white-space: nowrap;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 1;
+    top: 50%;
+    margin-top: -25%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all ease-out .3s 0s;
+    z-index: 50;
+    text-transform: capitalize;
+}
+.sideMenu ul li a span:after{
+	content: '';
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #2f323a transparent transparent;
+    width: 0;
+    height: 0;
+    background: transparent;
+    left: -10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.sideMenu ul li a:hover span{
+	opacity: 1;
+    transform: scale(1);
+    left: 80px;
+}
+
+.sideMenu ul li a.active{
+	background: #fff;
+	color: #596db9;
+}
